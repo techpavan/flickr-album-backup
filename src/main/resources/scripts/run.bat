@@ -1,1 +1,1 @@
-java -jar flickr-album-backup-1.0-SNAPSHOT.jar %~dp0 %1 %2 %3
+java -jar flickr-album-backup-1.0.jar %~dp0 %1 %2 %3
