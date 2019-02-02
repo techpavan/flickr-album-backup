@@ -93,6 +93,7 @@ public class FlickrBkp {
         photosets.getPhotosets().stream().forEach(photoset -> populateAlbum(photoset, photosetsInterface, albumList, latch));
         latch.await();
         log.info("Obtained albums: " + albumList.size());
+        log.info("Proceeding to fetch comments for albums and photos");
 
         // album is populated with all photo and video details.
 
@@ -114,7 +115,7 @@ public class FlickrBkp {
         }
         Path reportsPath = Paths.get(args[0], "reports");
         Files.createDirectories(reportsPath);
-        basePath = reportsPath.toString();
+        basePath = reportsPath.toString() + File.separator;
         log.info("Writing results to path: {}", basePath);
 
         if (args.length >= 3) {
@@ -259,6 +260,7 @@ public class FlickrBkp {
             log.debug("Initiated media comment collection for album: {}", album.getTitle());
             latch.await();
             log.debug("Finished media comment collection for album: " + album.getTitle());
+            log.info("Collected comments for album and photos: " + album.getTitle());
         } catch (Exception e) {
             log.debug("Error collecting comments for album: {}", album.getTitle(), e);
         }

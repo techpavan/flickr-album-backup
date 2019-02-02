@@ -12,7 +12,7 @@
 
     <groupId>com.github.techpavan</groupId>
     <artifactId>flickr-album-backup</artifactId>
-    <version>1.0</version>
+    <version>1.0.1-SNAPSHOT</version>
 
     <dependencies>
         <dependency>
